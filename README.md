@@ -61,6 +61,8 @@ Script to train the classification model. It uses data from the specified direct
 ### `inference.py`
 
 Script for performing inference on a batch of images. It first classifies the images and then runs YOLOv8 detection if bleeding is detected in any image. The results are displayed with appropriate labels and bounding boxes.
+### Example Output of inference.py
+![fig1](https://github.com/manasdhir/Detection_and_Classification_Pipeline-WCEBleedGen-/assets/142010408/f696d309-bf0d-4f31-8a15-c934498173b5)
 
 ## Notes
 
