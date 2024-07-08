@@ -20,5 +20,50 @@ at IEEE ICPEICES 2024 and will be published soon.
     ```bash
     pip install -r requirements.txt
     ```
-   
+### Training
+
+To train the classification model, run:
+```bash
+python train.py --data_dir <path-to-dataset> --model_save_path <path-to-save-model>
+```
+
+Example:
+```bash
+python train.py --data_dir /path/to/dataset --model_save_path /path/to/save/model
+```
+
+### Inference
+
+To run inference on a directory of images, run:
+```bash
+python inference.py <images_dir> <classification_model_path> <detection_weights_path>
+```
+
+Example:
+```bash
+python inference.py /path/to/images /path/to/classification_model.h5 /path/to/yolo_weights/best.pt
+```
+
+## Scripts Description
+
+### `data_loader.py`
+
+Contains the function `get_data(data_dir)` which loads and preprocesses images from the given directory.
+
+### `model.py`
+
+Defines the function `build_classification_model()` which constructs the CNN model used for classifying images.
+
+### `train.py`
+
+Script to train the classification model. It uses data from the specified directory and saves the trained model to the given path.
+
+### `inference.py`
+
+Script for performing inference on a batch of images. It first classifies the images and then runs YOLOv8 detection if bleeding is detected in any image. The results are displayed with appropriate labels and bounding boxes.
+
+## Notes
+
+Ensure you have the correct paths for your datasets and model weights when running the scripts. The inference script is designed to handle multiple images and display results in a structured manner.
+
 
